@@ -1,0 +1,11 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8080/web-eureka/eureka/
+server:
+  port: 8082
+  servlet:
+    context-path: /web-service-demo-rest
+spring:
+  application:
+    name: application-service-demo-rest

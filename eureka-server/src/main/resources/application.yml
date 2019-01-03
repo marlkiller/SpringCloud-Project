@@ -1,0 +1,19 @@
+server:
+  port: 8080
+  servlet:
+    # Web根路径
+    context-path: /web-eureka
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:${server.port}/web-eureka/eureka/
+
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+spring:
+  application:
+    # 应用名称
+    name: application-eureka
+
