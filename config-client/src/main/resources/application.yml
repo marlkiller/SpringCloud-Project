@@ -10,3 +10,7 @@ spring:
       uri: http://localhost:9090/web-config-server/
       profile: pro
       label: master
+
+info:
+  age: 0
+  name: default

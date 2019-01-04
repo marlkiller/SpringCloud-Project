@@ -12,5 +12,5 @@ spring:
       server:
         git:
           uri: https://github.com/marlkiller/SpringCloud-Project
-          search-paths: /config-server/src/main/resources/SpringCloud-Config/
+          search-paths: /config-server/src/main/resources/SpringCloud-Config
       label=master: master
