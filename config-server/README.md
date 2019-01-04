@@ -10,6 +10,28 @@ uri: Git 地址
 search-paths: 是搜索路径,只要是**父路径**即可
 search-paths 路径之内 添加一个或多个 Config配置文件 按照 {**Application-name**}-{**profile**}.yml 格式命名
 
+> 这里配置文件一定要注意格式,否则取的时候会报错
+> 推荐使用properties配置文件, 因为yml对格式要求比较高,这了坑我踩了好久 ...
+
+Github-Config-Repo : [https://github.com/marlkiller/SpringCloud-Config-Repo](https://github.com/marlkiller/SpringCloud-Config-Repo)
+
+```yml
+server:
+  port: 9090
+  servlet:
+    # Web根路径
+    context-path: /web-config-server
+spring:
+  application:
+    # 应用名称
+    name: application-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/marlkiller/SpringCloud-Config-Repo
+```
+
 [![](http://voidm.com/wp-content/uploads/2019/01/TIM截图20190104140808.png)](http://voidm.com/wp-content/uploads/2019/01/TIM截图20190104140808.png)
 
 ------------
