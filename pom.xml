@@ -11,10 +11,13 @@
 
     <modules>
         <module>eureka-server</module>
+
         <module>client-demo</module>
         <module>service-demo-rest</module>
         <module>service-demo-feign</module>
+
         <module>config-server</module>
+        <module>config-client</module>
     </modules>
 
     <!-- SpringBoot Parent -->

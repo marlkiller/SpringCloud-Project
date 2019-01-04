@@ -2,7 +2,7 @@ server:
   port: 9090
   servlet:
     # Web根路径
-    context-path: /web-config
+    context-path: /web-config-server
 spring:
   application:
     # 应用名称
@@ -12,5 +12,5 @@ spring:
       server:
         git:
           uri: https://github.com/marlkiller/SpringCloud-Project
-          search-paths: /config-server
+          search-paths: /config-server/src/main/resources/
       label=master: master
