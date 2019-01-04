@@ -2,6 +2,14 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8080/web-eureka/eureka/
+  # eureka Client列表显示地址信息
+  instance:
+    metadata-map:
+      management:
+        context-path: /web-client-demo/actuator
+    health-check-url: http://localhost:${server.port}/web-client-demo/actuator/health
+    status-page-url: http://localhost:${server.port}/web-client-demo/actuator/info
+    home-page-url: http://localhost:${server.port}/web-client-demo
 server:
   port: 8081
   servlet:
