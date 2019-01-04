@@ -96,24 +96,6 @@ server:
 > 这里要注意,yml配置文件有俩个
 > Git相关参数,还有Config对应的AppName\Profile要配置到bootstrap.yml, 否则启动会报错
 
-```yml
-server:
-  port: 9091
-  servlet:
-    context-path: /web-config-client
-spring:
-  application:
-    name: application-config-server
-  cloud:
-    config:
-      uri: http://localhost:9090/web-config-server/
-      profile: pro
-      label: master
-
-info:
-  age: 0
-  name: default
-```
 
 ### Pom依赖
 ```xml
