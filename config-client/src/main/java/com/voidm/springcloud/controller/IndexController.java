@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * 对内暴漏接口
+ * 配置文件获取
  *
  * @author voidm
  * @date 2019.01.02
@@ -17,12 +17,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/")
 public class IndexController {
 
-    @Value("${name}")
-    private String configValue;
+    @Value("${info.name}")
+    private String infoName;
+    @Value("${info.age}")
+    private String infoAge;
 
     @RequestMapping({"/", "hello"})
     @ResponseBody
     public String hello() {
-        return "server.port : " + configValue;
+        return String.format("info.name : %s \t info.age : %s", infoName, infoAge);
     }
 }
