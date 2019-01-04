@@ -69,14 +69,32 @@ public class ConfigServerApplication {
 
 ## Config-Client (客户端配置)
 ### yml配置
-
 config.uri是**Config-Server**的地址
 profile是对应配置文件的**profile**
 label 是 git分支, 默认是**master**
 
+- bootstrap.yml
+```yml
+spring:
+  application:
+    name: application-config-server
+  cloud:
+    config:
+      uri: http://localhost:9090/web-config-server/
+      profile: dev
+      label: master
+```
+- application.yml
 
-> 这里要注意,远程配置项在本地配置文件也必须要存在
-> 否则项目启动的时候加载远程配置会先从本地找, 找不到直接启动报错 ! 坑!!
+```yml
+server:
+  port: 9091
+  servlet:
+    context-path: /web-config-client
+```
+
+> 这里要注意,yml配置文件有俩个
+> Git相关参数,还有Config对应的AppName\Profile要配置到bootstrap.yml, 否则启动会报错
 
 ```yml
 server:
