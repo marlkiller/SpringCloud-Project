@@ -3,6 +3,8 @@
 
 ------------
 
+- [SpringCloud-Config 配置中心服务器与客户端的搭建使用](https://github.com/marlkiller/SpringCloud-Project/blob/master/config-server/README.md "配置中心服务器与客户端的搭建使用")
+
 # SpringCloud-Parent
 
 SpringBoot Version : 2.0.2.RELEASE
