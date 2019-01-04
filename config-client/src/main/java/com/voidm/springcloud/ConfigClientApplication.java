@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * 内部调用服务
+ * Config 配置客户端
  *
  * @author voidm
  * @date 2019.01.02

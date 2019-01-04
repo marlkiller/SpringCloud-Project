@@ -17,12 +17,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/")
 public class IndexController {
 
-    @Value("${config}")
+    @Value("${name}")
     private String configValue;
 
     @RequestMapping({"/", "hello"})
     @ResponseBody
     public String hello() {
-        return "Config : " + configValue;
+        return "server.port : " + configValue;
     }
 }
