@@ -165,3 +165,39 @@ public class ConfigClientApplication {
 启动项目 , 测试,如下图 (配置获取成功)
 
 [![](http://voidm.com/wp-content/uploads/2019/01/TIM截图20190104141833.png)](http://voidm.com/wp-content/uploads/2019/01/TIM截图20190104141833.png)
+
+
+## 自动刷新配置
+此时,如果手动update Git上的配置时, 我们Client里的配置是不会刷新的,
+这个配置只有在项目初始化的时候会拉取一次,怎么办呢?
+
+- 首先在Client 添加Pom依赖,开启监控
+
+```xml
+        <!-- 刷新配置 -->
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+```
+- 然后在application.yml配置文件中添加过滤节点
+```yml
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health,info
+```
+- 之后在有配置文件注解@value的类上添加RefreshScope注解
+
+此时,的配置项是半自动的,Git服务器中配置文件更改后,
+Client发送一个POST请求,可以来手动刷新配置项(**如果上面的不配置,该Api会404**)
+
+[![](http://voidm.com/wp-content/uploads/2019/01/TIM截图20190104161514.png)](http://voidm.com/wp-content/uploads/2019/01/TIM截图20190104161514.png)
+
+Refresh 之后, Client中的配置则为最新, 如果要做到实时更新的话,
+需要在git仓库Settings中添加一个WebHook,就是在git每次提交代码后,
+自动发送一个refresh请求到你的ClientServer,
+这里由于我项目在本地搭建,外网不能访问,So,就不测试了...
+
+[![](http://voidm.com/wp-content/uploads/2019/01/TIM截图20190104162531-1024x466.png)](http://voidm.com/wp-content/uploads/2019/01/TIM截图20190104162531.png)
