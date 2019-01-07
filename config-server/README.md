@@ -203,7 +203,10 @@ management:
 ```
 - 之后在有配置文件注解@value的类上添加RefreshScope注解
 
-此时,的配置项是半自动的,Git服务器中配置文件更改后,
+> API根路径路径默认是actuator!也可以手动配置
+> Refresh-API : Host:Port/actuator/refresh
+
+此时的配置项是半自动的,Git服务器中配置文件更改后,
 Client发送一个POST请求,可以来手动刷新配置项(**如果上面的不配置,该Api会404**)
 
 [![](http://voidm.com/wp-content/uploads/2019/01/TIM截图20190104161514.png)](http://voidm.com/wp-content/uploads/2019/01/TIM截图20190104161514.png)
