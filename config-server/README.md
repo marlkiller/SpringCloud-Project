@@ -15,6 +15,7 @@ search-paths 路径之内 添加一个或多个 Config配置文件 按照 {**App
 > 推荐使用properties配置文件, 因为yml对格式要求比较高,这了坑我踩了好久 ...如下图
 [![](http://voidm.com/wp-content/uploads/2019/01/TIM截图20190104140808.png)](http://voidm.com/wp-content/uploads/2019/01/TIM截图20190104140808.png)
 
+为了方便管理 以及后面的远程配置自动更新 ,强烈建议配置文件放在额外的一个仓库里!
 Github-Config-Repo : [https://github.com/marlkiller/SpringCloud-Config-Repo](https://github.com/marlkiller/SpringCloud-Config-Repo)
 
 - Config-Client-yml配置项
