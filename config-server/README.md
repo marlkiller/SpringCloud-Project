@@ -188,13 +188,18 @@ public class ConfigClientApplication {
 	<artifactId>spring-boot-starter-actuator</artifactId>
 </dependency>
 ```
+
+配置Actuator开放页面节点  默认只开启了health、info两个节点,可以手动配置节点,
+用,分割,eg:beans,info,health
+如果是开发所有节点, 可以用* , 在yml配置文件中为 include: "*"  
+注意引号~!!
 - 然后在application.yml配置文件中添加过滤节点
 ```yml
 management:
   endpoints:
     web:
       exposure:
-        include: refresh,health,info
+        include: "*"
 ```
 - 之后在有配置文件注解@value的类上添加RefreshScope注解
 

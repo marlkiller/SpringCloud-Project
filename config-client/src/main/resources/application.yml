@@ -3,6 +3,7 @@ server:
   servlet:
     context-path: /web-config-client
 
+# 配置actuator开放节点
 management:
   endpoints:
     web:

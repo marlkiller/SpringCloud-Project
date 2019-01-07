@@ -17,3 +17,10 @@ server:
 spring:
   application:
     name: application-client-demo
+
+# 配置actuator开发节点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
