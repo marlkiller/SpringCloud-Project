@@ -28,13 +28,11 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
         </dependency>
-
         <!--openfeign 依赖-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
-
         <!--openfeign 依赖-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -42,6 +40,11 @@
             <version>2.0.0.RC1</version>
             <type>pom</type>
             <scope>import</scope>
+        </dependency>
+        <!-- 分布式链路追踪 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
         </dependency>
     </dependencies>
 

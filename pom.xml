@@ -10,12 +10,15 @@
 
 
     <modules>
+        <!--eureka服务器-->
         <module>eureka-server</module>
 
+        <!--三个服务,一个client 俩个service-->
         <module>client-demo</module>
         <module>service-demo-rest</module>
         <module>service-demo-feign</module>
 
+        <!--远程配置中心-->
         <module>config-server</module>
         <module>config-client</module>
     </modules>
