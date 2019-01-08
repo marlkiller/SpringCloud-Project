@@ -4,6 +4,7 @@
 ------------
 
 - [SpringCloud-Config 配置中心服务器与客户端的搭建使用](https://github.com/marlkiller/SpringCloud-Project/blob/master/config-server/README.md "配置中心服务器与客户端的搭建使用")
+- [SpringCloud-Global Exception 全局异常处理](http://voidm.com/2019/01/08/springboot-global-exception/ "SpringCloud-Global Exception 全局异常处理")
 
 # SpringCloud-Parent
 
