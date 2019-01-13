@@ -6,6 +6,16 @@
 - [SpringCloud-Config 配置中心服务器与客户端的搭建使用](https://github.com/marlkiller/SpringCloud-Project/blob/master/config-server/README.md "配置中心服务器与客户端的搭建使用")
 - [SpringCloud-Global Exception 全局异常处理](http://voidm.com/2019/01/08/springboot-global-exception/ "SpringCloud-Global Exception 全局异常处理")
 
+# 项目Module结构
+
+- SpringCloud-Project (Parent 聚合工程)
+    - config-client (分布式远程配置文件-Client)
+    - config-server (分布式远程配置文件-Server)
+    - eureka-server (Eureka 注册中心服务器)
+    - client-demo (内部微服务接口)
+    - service-demo-feign (对外暴漏微服务接口/Feign远程调用)
+    - service-demo-rest (对外暴漏微服务接口/Rest远程调用)
+
 # SpringCloud-Parent
 
 SpringBoot Version : 2.0.2.RELEASE
