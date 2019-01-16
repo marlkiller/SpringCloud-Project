@@ -18,8 +18,8 @@
 
 # SpringCloud-Parent
 
-SpringBoot Version : 2.0.2.RELEASE
-SpringCloud Version : Finchley.BUILD-SNAPSHOT
+- SpringBoot Version : 2.0.2.RELEASE
+- SpringCloud Version : Finchley.BUILD-SNAPSHOT
 
 首先创建一个聚合工程,SpringBootDemo-Parent
 ```xml
@@ -53,8 +53,9 @@ SpringCloud Version : Finchley.BUILD-SNAPSHOT
 
 ```
 
-聚合工程包含四个Module,
+聚合工程包含四个Module,  
 分别是eureka注册中心服务器,内部调用服务,还有对外暴漏服务(又分为**rest**调用 跟 **feign** 调用俩种版本)
+
 ```xml
     <modules>
         <module>eureka-server</module>
@@ -92,9 +93,9 @@ SpringCloud Version : Finchley.BUILD-SNAPSHOT
 ------------
 ## Module-Eureka (注册中心)
 
-Web : http://127.0.0.1:8080/web-eureka/
-Spring-Application-Name : application-eureka
-defaultZone : http://127.0.0.1:8080/web-eureka//eureka/
+- Web : http://127.0.0.1:8080/web-eureka/
+- Spring-Application-Name : application-eureka
+- defaultZone : http://127.0.0.1:8080/web-eureka//eureka/
 
 yml配置文件
 ```yml
@@ -154,8 +155,8 @@ public class EurekaServerApplication {
 
 ```
 
-yml配置文件
-四个web模块 , content-path,都以**/web** 开头 , 注意 一定要加/ 否则启动会报错!
+yml配置文件  
+四个web模块 , content-path,都以**/web** 开头 , 注意 一定要加/ 否则启动会报错!  
 application-name 以 application开头,SpringCLoud的Rpc调用是以Application-Name发现并找到相应的服务,所以这个很重要
 
 ```yml
@@ -182,10 +183,11 @@ spring:
 ------------
 ## Module-Client
 
-Web : http://127.0.0.1:8081/web-client-demo/
-Spring-Application-Name : application-client-demo
+- Web : http://127.0.0.1:8081/web-client-demo/
+- Spring-Application-Name : application-client-demo
 
 yml配置文件
+
 ```yml
 eureka:
   client:
@@ -201,6 +203,7 @@ spring:
 ```
 
 Pom依赖
+
 ```xml
         <!--注册中心依赖-->
 <dependency>
@@ -210,6 +213,7 @@ Pom依赖
 ```
 
 提供一个对内接口,供service调用
+
 ```java
 /**
  * 对内暴漏接口
@@ -256,8 +260,8 @@ public class ClientDemoApplication {
 
 ### Service-Rest
 
-Web : http://127.0.0.1:8082/web-service-demo-rest/
-Spring-Application-Name : application-service-demo-rest
+- Web : http://127.0.0.1:8082/web-service-demo-rest/
+- Spring-Application-Name : application-service-demo-rest
 
 yml配置文件
 ```yml
@@ -294,7 +298,9 @@ Pom依赖
     </dependency>
 </dependencies>
 ```
+
 提供一个对外暴漏的接口,对接Client采用**RestTemplate**
+
 ```java
 /**
  * 服务调用方
@@ -324,9 +330,10 @@ public class IndexController {
     }
 }
 ```
-启动Main方法,开启EnableDiscoveryClient注解,发现Client服务
-实例化RestTemplate Bean,这里一定要加上**LoadBalanced**注解
-否则不会根据ApplicationName去表示发现服务,直接404
+
+启动Main方法,开启EnableDiscoveryClient注解,发现Client服务  
+实例化RestTemplate Bean,这里一定要加上**LoadBalanced**注解  
+否则不会根据ApplicationName去表示发现服务,直接404  
 ```java
 /**
  * 服务注册中心
@@ -354,8 +361,8 @@ public class ServiceDemoApplication {
 ------------
 ### Service-Feign
 
-Web : http://127.0.0.1:8084/web-service-demo-feign/
-Spring-Application-Name : application-service-demo-feign
+- Web : http://127.0.0.1:8084/web-service-demo-feign/
+- Spring-Application-Name : application-service-demo-feign
 
 ------------
 yml配置文件
@@ -376,10 +383,10 @@ spring:
 
 Pom依赖
 
-feign依赖,这块有个坑
-由于SpringCLoud各组件版本迭代更新,依赖jar目录迁移,
-导致Feign依赖包Miss,找不到,这里找到了一种解决方案
-**2.0.0.RC1** 这个版本的jar,是在之前配置的**Spring私服**找到的,
+feign依赖,这块有个坑  
+由于SpringCLoud各组件版本迭代更新,依赖jar目录迁移,  
+导致Feign依赖包Miss,找不到,这里找到了一种解决方案  
+**2.0.0.RC1** 这个版本的jar,是在之前配置的**Spring私服**找到的,  
 具体详细情况,请点[这里](https://blog.csdn.net/alinyua/article/details/80070890 "这里")
 ```xml
 <dependencies>
@@ -415,7 +422,7 @@ feign依赖,这块有个坑
 </dependencies>
 ```
 
-FeignClient.value 是 Client的Application-name
+FeignClient.value 是 Client的Application-name  
 GetMapping.value 是 项目名称(content-path) + Api地址
 ```java
 /**
