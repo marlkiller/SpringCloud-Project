@@ -19,7 +19,7 @@
 </dependency>
 ```
 
-###yml配置
+### yml配置
 
 由于gateway用的是webflux，所以**context-path**这个设定其实是不生效的，现在还没有一个key来设定webflux的context-path  
 default-filters: 里面可以定义一些共同的filter，对所有路由都起作用
