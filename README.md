@@ -5,6 +5,7 @@
 
 - [SpringCloud-Config 配置中心服务器与客户端的搭建使用](https://github.com/marlkiller/SpringCloud-Project/blob/master/config-server/README.md "配置中心服务器与客户端的搭建使用")
 - [SpringCloud-Global Exception 全局异常处理](http://voidm.com/2019/01/08/springboot-global-exception/ "SpringCloud-Global Exception 全局异常处理")
+- [SpringCloud-GateWay 自定义网关](https://github.com/marlkiller/SpringCloud-Project/tree/master/gateway-server "SpringCloud-GateWay 自定义网关")
 
 # 项目Module结构
 
@@ -15,6 +16,7 @@
     - client-demo (内部微服务接口)
     - service-demo-feign (对外暴漏微服务接口/Feign远程调用)
     - service-demo-rest (对外暴漏微服务接口/Rest远程调用)
+    - gateway-server (GateWay网关服务器)
 
 # SpringCloud-Parent
 
