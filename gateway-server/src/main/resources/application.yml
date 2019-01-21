@@ -16,7 +16,7 @@ spring:
     gateway:
       # default-filters: 里面可以定义一些共同的filter，对所有路由都起作用
       default-filters:
-        - TokenCheck
+        # - TokenCheck
       routes:
         # --------------------------------转发到微服务------------------------------------
         - id: 2-application-client-demo
@@ -28,8 +28,8 @@ spring:
         - id: 2-voidm-blog
           uri: http://voidm.com
           predicates:
-            - Path=/2blog/admin
-          # StripPrefix=1表示 比如请求/2blog/admin，去除掉前面一个前缀之后，最后转发到目标服务的路径为/admin
+            - Path=/2blog/**
+          # StripPrefix=1表示 比如请求/2blog/**，去除掉前面一个前缀之后，最后转发到目标服务的路径为/**
           # 也可以通过 RewritePath 来实现
           filters:
             - StripPrefix=1
