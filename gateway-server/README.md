@@ -11,6 +11,8 @@
 ### pom依赖
 
 **这里如果用starter-web启动会报错**
+因为 gateway 是基于 **spring-webflux** 开发的，他依赖的 **DispatcherHandler** 就和我们 web 里的 **DispatcherServlet** 一样的功能  
+
 ```xml
 <!--gateway依赖-->
 <dependency>
