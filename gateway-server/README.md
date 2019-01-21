@@ -2,6 +2,11 @@
 
 # SpringCloud-GateWay
 
+
+> 本文非常简要介绍如何使用 Spring Cloud Gateway 作为 API 网关(不是使用 zuul 作为网关)  
+> 关于 Spring Cloud Gateway 和 zuul 的性能比较本文不再赘述，基本可以肯定 Spring Cloud  
+> Finchley 版本的 gateway比zuul 1.x系列的性能和功能整体要好.[详情请看这里](http://www.itmuch.com/spring-cloud-sum/performance-zuul-and-gateway-linkerd/)
+
 ## GateWay-Server (服务端配置)
 ### pom依赖
 
