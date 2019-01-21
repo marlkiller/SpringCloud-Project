@@ -12,7 +12,7 @@ import reactor.core.publisher.Mono;
  * 自定义过滤器
  *
  * 类名一定要为filterName + GatewayFilterFactory
- * 如这里定义为JwtCheckGatewayFilterFactory的话，它的filterName就是JwtCheck
+ * 如这里定义为TokenCheckGatewayFilterFactory的话，它的filterName就是TokenCheck
  *
  * @author voidm
  */
