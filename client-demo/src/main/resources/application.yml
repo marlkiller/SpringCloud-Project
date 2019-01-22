@@ -11,7 +11,7 @@ eureka:
     health-check-url: http://${eureka.instance.ip-address}:${server.port}/web-client-demo/actuator/health
     status-page-url: http://${eureka.instance.ip-address}:${server.port}/web-client-demo/actuator/info
     home-page-url: http://${eureka.instance.ip-address}:${server.port}/web-client-demo
-    # 显示的实力名称
+    # 显示的实例名称
     instance-id: ${eureka.instance.ip-address}:${spring.application.name}:${server.port}
     # instance-id: ${spring.application.name}:${server.port}
     # 使用IP替代实例名
