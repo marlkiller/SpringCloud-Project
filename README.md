@@ -5,6 +5,7 @@
 
 - [SpringCloud-Config 配置中心服务器与客户端的搭建使用](https://github.com/marlkiller/SpringCloud-Project/blob/master/config-server/README.md "配置中心服务器与客户端的搭建使用")
 - [SpringCloud-Global Exception 全局异常处理](http://voidm.com/2019/01/08/springboot-global-exception/ "SpringCloud-Global Exception 全局异常处理")
+- [Python 实现 Eureka 的注册与发现](https://github.com/marlkiller/python-eureka-client "Python 实现 Eureka 的注册与发现")
 - [SpringCloud-GateWay 自定义网关](https://github.com/marlkiller/SpringCloud-Project/tree/master/gateway-server "SpringCloud-GateWay 自定义网关")
 
 # 项目Module结构
@@ -195,13 +196,39 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8080/web-eureka/eureka/
+  # eureka Client列表显示地址信息
+  # 如果项目配置有 server.servlet.context-path 属性，想要被 spring boot admin 监控，就要配置以下属性
+  instance:
+    metadata-map:
+      management:
+        context-path: /web-client-demo/actuator
+    health-check-url: http://${eureka.instance.ip-address}:${server.port}/web-client-demo/actuator/health
+    status-page-url: http://${eureka.instance.ip-address}:${server.port}/web-client-demo/actuator/info
+    home-page-url: http://${eureka.instance.ip-address}:${server.port}/web-client-demo
+    # 显示的实例名称
+    instance-id: ${eureka.instance.ip-address}:${spring.application.name}:${server.port}
+    # instance-id: ${spring.application.name}:${server.port}
+    # 使用IP替代实例名
+    prefer-ip-address: true
+    # 实力的IP地址
+    ip-address: 127.0.0.1
+    # 服务注册中心实例的主机名
+    hostname: 127.0.0.1
 server:
   port: 8081
   servlet:
+    # Web项目路径
     context-path: /web-client-demo
 spring:
   application:
     name: application-client-demo
+
+# 配置actuator开放节点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 ```
 
 Pom依赖
