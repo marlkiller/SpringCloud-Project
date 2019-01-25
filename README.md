@@ -10,14 +10,15 @@
 
 # 项目Module结构
 
-- SpringCloud-Project (Parent 聚合工程)
+- SpringCloud-Project ( Parent 聚合工程)
     - config-client (分布式远程配置文件-Client)
     - config-server (分布式远程配置文件-Server)
-    - eureka-server (Eureka 注册中心服务器)
+    - eureka-server ( Eureka 注册中心服务器)
     - client-demo (内部微服务接口)
     - service-demo-feign (对外暴漏微服务接口/Feign远程调用)
     - service-demo-rest (对外暴漏微服务接口/Rest远程调用)
-    - gateway-server (GateWay网关服务器)
+    - gateway-server ( GateWay 网关服务器)
+    - webflux-client ( webflux web 客户端)
 
 # SpringCloud-Parent
 
