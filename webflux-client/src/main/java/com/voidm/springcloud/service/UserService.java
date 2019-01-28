@@ -15,7 +15,7 @@ import java.util.List;
 @Service
 public class UserService {
 
-    private List<User> users = new ArrayList(10);
+    private List<User> users = new ArrayList<>(10);
 
     @PostConstruct
     public void init() {

@@ -32,14 +32,14 @@ public class UserHandler {
     }
 
     Mono<ServerResponse> getAllUser(ServerRequest serverRequest) {
-        Flux<User> allUser = userService.getAllUser();
-        return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).body(allUser, User.class);
+        Flux<User> fluxUsers = userService.getAllUser();
+        return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).body(fluxUsers, User.class);
     }
 
     Mono<ServerResponse> getUserById(ServerRequest serverRequest) {
         int uid = Integer.valueOf(serverRequest.pathVariable("id"));
-        Mono<User> user = userService.getUserById(uid);
-        return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).body(user, User.class);
+        Mono<User> monoUser = userService.getUserById(uid);
+        return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).body(monoUser, User.class);
     }
 
     Mono<ServerResponse> saveUser(ServerRequest serverRequest) {
