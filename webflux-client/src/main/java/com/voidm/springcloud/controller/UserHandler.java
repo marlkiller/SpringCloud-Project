@@ -47,7 +47,6 @@ public class UserHandler {
         return ServerResponse.ok().build(userService.saveUser(user));
     }
 
-
     Mono<ServerResponse> typeReference(ServerRequest serverRequest) {
         Map<Integer, Object> map = new HashMap<>();
         map.put(1, new User(1, "void"));

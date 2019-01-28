@@ -22,8 +22,6 @@ public class RoutingConfiguration {
 
     @Bean
     public RouterFunction<ServerResponse> monoRouterFunction(UserHandler userHandler) {
-
-
         // lambda事件绑定
         return route(GET("/handler/users").and(accept(MediaType.APPLICATION_JSON)), userHandler::getAllUser)
                 .andRoute(GET("/handler/user/{id}").and(accept(MediaType.APPLICATION_JSON)), userHandler::getUserById)
@@ -35,5 +33,4 @@ public class RoutingConfiguration {
                     return ServerResponse.ok().body(Mono.just(map), Map.class);
                 });
     }
-
 }
