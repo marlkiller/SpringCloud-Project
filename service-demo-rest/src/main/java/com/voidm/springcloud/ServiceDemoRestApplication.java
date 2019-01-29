@@ -23,7 +23,31 @@ public class ServiceDemoRestApplication {
 
     @Bean
     @LoadBalanced
-    public RestTemplate getRestTemplate (){
+    public RestTemplate getRestTemplate() {
         return new RestTemplate();
     }
+
+
+    // <dependency>
+    //     <groupId>org.springframework.boot</groupId>
+    //     <artifactId>spring-boot-starter-webflux</artifactId>
+    // </dependency>
+    /*
+    @Autowired
+    private WebClient.Builder webClientBuilder;
+
+    public Mono<String> test() {
+        Mono<String> result = webClientBuilder.build()
+                .get()
+                .uri("http://application-client-demo/web-client-demo?name=didi")
+                .retrieve()
+                .bodyToMono(String.class);
+        return result;
+    }
+
+    @Bean
+    @LoadBalanced
+    public WebClient.Builder loadBalancedWebClientBuilder() {
+        return WebClient.builder();
+    }*/
 }
