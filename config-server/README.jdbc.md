@@ -3,6 +3,7 @@ Config-Server
 ```java
 @EnableConfigServer
 ```
+```yml
 server:
   port: 9090
   servlet:
@@ -23,10 +24,12 @@ spring:
     username: root
     password: 
     driver-class-name: com.mysql.jdbc.Driver
+```
     
 Config-Client
 ===
 #### bootstrap.yml
+```yml
 spring:
   application:
     name: config-client
@@ -37,4 +40,4 @@ spring:
       label: master
       profile: dev
       name: config-client
-
+```
