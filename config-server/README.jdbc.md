@@ -41,3 +41,20 @@ spring:
       profile: dev
       name: config-client
 ```
+
+
+SQL
+===
+```sql
+CREATE TABLE `properties` (
+`id` INT ( 11 ) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键--自增长',
+`akey` VARCHAR ( 255 ) COLLATE utf8mb4_unicode_ci NOT NULL,
+`avalue` VARCHAR ( 1000 ) COLLATE utf8mb4_unicode_ci NOT NULL,
+`application` VARCHAR ( 50 ) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '应用名称',
+`profile` VARCHAR ( 50 ) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '应用模块',
+`label` VARCHAR ( 50 ) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '应用环境',
+PRIMARY KEY ( `id` ) 
+) ENGINE = INNODB AUTO_INCREMENT = 1050 DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+INSERT INTO `bp_config`.`properties`(`id`, `akey`, `avalue`, `application`, `profile`, `label`) VALUES (1049, 'foo', 'foo', 'config-client', 'dev', 'master');
+```
